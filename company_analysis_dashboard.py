@@ -7,7 +7,7 @@ import seaborn as sns
 # Setting up Streamlit page configuration
 st.set_page_config(page_title="Company Financial Dashboard", layout="wide")
 
-# Step 1: Sample financial data
+# Sample financial data
 data_income = {
     "Year": [2018, 2019, 2020, 2021, 2022],
     "Revenue": [500000, 600000, 550000, 650000, 700000],
@@ -29,7 +29,7 @@ data_balance = {
 income_df = pd.DataFrame(data_income)
 balance_df = pd.DataFrame(data_balance)
 
-# Step 2: Financial analysis calculations
+# Financial analysis calculations
 income_df['Gross Profit Margin'] = (income_df['Revenue'] - income_df['COGS']) / income_df['Revenue']
 income_df['Net Profit Margin'] = income_df['Net Income'] / income_df['Revenue']
 balance_df['Current Ratio'] = balance_df['Current Assets'] / balance_df['Current Liabilities']
@@ -38,7 +38,7 @@ balance_df['ROE'] = income_df['Net Income'] / balance_df['Shareholder Equity']
 income_df['Revenue Growth (%)'] = income_df['Revenue'].pct_change() * 100
 income_df['Net Income Growth (%)'] = income_df['Net Income'].pct_change() * 100
 
-# Step 3: Streamlit layout
+#  Streamlit layout
 st.title("Company Financial Performance Dashboard")
 st.sidebar.title("Dashboard Options")
 
